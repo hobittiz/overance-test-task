@@ -20,7 +20,7 @@
           <input
             type="text"
             placeholder="Input your text..."
-            class="default-field w-full p-2.5 pr-9 lg:pr-2.5 transition duration-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm outline-none rounded-lg block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            class="default-field w-full p-2.5 pr-9 lg:pr-2.5 transition duration-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm outline-none focus:border-blue-500 rounded-lg block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             :class="{
               '!border-green-400 shadow shadow-green-500/50 active':
                 searchText && field.value.includes(searchText)
