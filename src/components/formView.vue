@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto min-h-screen flex-col items-center flex py-12">
-    <h1 class="text-4xl mb-10 font-bold">Overance test task</h1>
-    <form class="w-1/2" @submit.prevent>
+    <h1 class="text-3xl px-2 text-center lg:text-4xl mb-10 font-bold">Overance test task</h1>
+    <form class="w-full mb-12 px-8 lg:w-3/5 lg:px-0" @submit.prevent>
       <div class="flex-col flex gap-3">
         <input
           type="text"
@@ -15,12 +15,12 @@
           v-model="searchText"
           @input="highlightFields"
         />
-        <div class="input flex gap-2 items-center" v-for="field in fields" :key="field.id">
-          <span class="vowel-count w-1/6">Vowels: {{ field.vowelCount }}</span>
+        <div class="input flex gap-2 items-center justify-between relative flex-wrap lg:flex-nowrap" v-for="field in fields" :key="field.id">
+          <span class="vowel-count w-6/12 order-1 lg:w-1/6 lg:order-none">Vowels: {{ field.vowelCount }}</span>
           <input
             type="text"
             placeholder="Input your text..."
-            class="default-field transition duration-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm outline-none rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            class="default-field w-full p-2.5 pr-9 lg:pr-2.5 transition duration-300 bg-gray-50 border border-gray-300 text-gray-900 text-sm outline-none rounded-lg block dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
             :class="{
               '!border-green-400 shadow shadow-green-500/50 active':
                 searchText && field.value.includes(searchText)
@@ -30,7 +30,7 @@
           />
           <button
             type="button"
-            class="delete-item flex items-center justify-center transition duration-300 w-full max-w-8 aspect-square bg-red-400 rounded-full hover:bg-red-500 hover:rotate-90"
+            class="delete-item absolute right-2 w-full top-2.5 max-w-6 order-2 lg:right-0 lg:top-0 lg:relative lg:order-none lg:max-w-8 lg:w-full flex items-center justify-center transition duration-300 aspect-square bg-red-400 rounded-full hover:bg-red-500 hover:rotate-90"
             :disabled="fields.length === 1"
             :class="{ 'grayscale pointer-events-none': fields.length === 1 }"
             @click="removeField(field.id)"
@@ -53,9 +53,10 @@
         </button>
       </div>
     </form>
-    <p class="cratedby mt-12 text-sm text-state-400">
+    <p class="cratedby justify-self-end block mt-auto text-sm text-state-400">
       Created by
       <a
+        target="_blank"
         href="https://www.linkedin.com/in/volodymyr-tsyrul-32b755171/"
         class="transition duration-300 text-sky-500 hover:text-sky-700 font-semibold"
         >Volodymyr Tsyrul</a
