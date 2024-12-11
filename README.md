@@ -10,3 +10,9 @@ To run the projec, follow this instructions:
    npm run preview
 ```
 3. Open local server. Your IDE should show address in terminal, just open this link
+
+   To run tests, please stop your server in terminal, and run command 
+
+```
+npx vitest
+```
